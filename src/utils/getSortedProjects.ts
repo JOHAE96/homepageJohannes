@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 
-const getSortedPosts = (posts: CollectionEntry<"blog">[]) =>
-  posts
+const getSortedProjects = (projects: CollectionEntry<"projects">[]) =>
+  projects
     .filter(({ data }) => !data.draft)
     .sort(
       (a, b) =>
@@ -9,4 +9,4 @@ const getSortedPosts = (posts: CollectionEntry<"blog">[]) =>
         Math.floor(new Date(a.data.pubDatetime).getTime() / 1000)
     );
 
-export default getSortedPosts;
+export default getSortedProjects;

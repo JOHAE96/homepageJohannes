@@ -1,0 +1,72 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+---
+
+<Layout title={`Kontakt | ${SITE.title}`}>
+  <Header activeNav="contact" />
+
+  <main id="main-content">
+    <div class="not-found-wrapper gap-1">
+      <form>
+        <label
+          for="name"
+          class="text-black mb-2 mt-3 block text-base font-medium"
+        >
+          Name
+        </label>
+        <input
+          class="bg-white w-full rounded-md border px-2 py-1 text-base focus:shadow-md"
+          type="text"
+          id="name"
+          placeholder="Name"
+        />
+        <label for="email" class="text-black mt-3 block text-base font-medium">
+          Email
+        </label>
+        <input
+          class="bg-white w-full rounded-md border px-2 py-1 text-base"
+          id="email"
+          type="email"
+          placeholder="E-Mail"
+        />
+        <label
+          for="subject"
+          class="text-black mt-3 block text-base font-medium"
+        >
+          Betreff
+        </label>
+        <input
+          class="bg-white w-full rounded-md border px-2 py-1 text-base"
+          id="subject"
+          type="text"
+          placeholder="Betreff"
+        />
+        <label
+          for="message"
+          class="text-black mt-3 block text-base font-medium"
+        >
+          Nachricht
+        </label>
+        <textarea
+          class="bg-white w-full rounded-md border px-2 py-1 text-base"
+          id="message"
+          placeholder="Nachricht"></textarea>
+        <button
+          class="hover:shadow-form text-white rounded-md bg-[#a0a0ff] px-8 py-3 text-base font-semibold outline-none hover:bg-[#8282ff]"
+          type="submit">Absenden</button
+        >
+      </form>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  #main-content {
+    @apply mx-auto flex max-w-3xl flex-1 items-center justify-center;
+  }
+</style>
