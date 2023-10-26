@@ -14,4 +14,3 @@ In meiner Freizeit Spiele ich gern Gesellschaftspiele
 
 - Brettspiele
 - Filme & Serien (siehe Hörsaalkino)
-- Hobby Handwerker
