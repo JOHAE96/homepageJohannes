@@ -10,7 +10,7 @@ In meiner Freizeit Spiele ich gern Gesellschaftspiele
   <label> Johannes Häuser; Bildnachweise: Dominique Wollniok</label>
 </div>
 
-## Freiteit
+## Freizeit
 
 - Brettspiele
 - Filme & Serien (siehe Hörsaalkino)
