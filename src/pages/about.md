@@ -13,4 +13,4 @@ In meiner Freizeit Spiele ich gern Gesellschaftspiele
 ## Freizeit
 
 - Brettspiele
-- Filme & Serien (siehe Hörsaalkino)
+- Filme & Serien (siehe [Hörsaalkino](/projects/hoersaalkino))
