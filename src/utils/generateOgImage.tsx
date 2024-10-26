@@ -6,14 +6,12 @@ import { Resvg } from "@resvg/resvg-js";
 const fetchFonts = async () => {
   // Regular Font
   const fontFileRegular = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.regular.ttf"
+    "/assets/fonts/ibm-plex-mono.regular.ttf"
   );
   const fontRegular: ArrayBuffer = await fontFileRegular.arrayBuffer();
 
   // Bold Font
-  const fontFileBold = await fetch(
-    "https://www.1001fonts.com/download/font/ibm-plex-mono.bold.ttf"
-  );
+  const fontFileBold = await fetch("/assets/fonts/ibm-plex-mono.bold.ttf");
   const fontBold: ArrayBuffer = await fontFileBold.arrayBuffer();
 
   return { fontRegular, fontBold };
