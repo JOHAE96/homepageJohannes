@@ -22,4 +22,4 @@ Die App hat das Ziel dem Betrachter zusätzliche Informationen zu dem Projekt zu
 Für den Demonstrator wurde zusätzlich, im Rahmen meiner Bachelorarbeit, ein Spiel entwickelt, bei dem der Fokus auf dem Multi-Use Gedanke, als Mehrfachnutzung bestehender unternehmerischer Ressourcen zur Generierung von Kostenvorteilen, liegt.
 Meine Aufgabe lag darin, eine Benutzeroberfläche mit AR für dieses Spiel zu entwickeln. Diese ermöglicht es mit einer entsprechenden Flächenerkennung die für das Spiel erforderliche Karte auf den Demonstrator zu platzieren. Zudem kann der Spieler mittels der in AR dargestellten Buttons interagieren. Fahrzeuge fahren auf der Karte Punkte ab, welche auf der Karte visualisiert und in einer Listenansicht dargestellt werden.
 
-Die App wurde mit dem AR Framework: AR-Kit von Apple Entwickelt
+Die App wurde mit dem AR Framework: AR-Kit von Apple Entwickelt.
