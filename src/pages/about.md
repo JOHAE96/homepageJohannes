@@ -14,3 +14,7 @@ In meiner Freizeit Spiele ich gern Gesellschaftspiele
 
 - Brettspiele
 - Filme & Serien (siehe [Hörsaalkino](/projects/hoersaalkino))
+- FPV Drohnen
+- 3D-Druck
+- Motorradfahren
+- Fotografie
