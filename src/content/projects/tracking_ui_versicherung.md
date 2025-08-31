@@ -26,6 +26,6 @@ bitside GmbH, für einen Versicherungskonzern
 
 Entwicklung einer zentralen Druckplattform für einen Versicherungskonzern. Die
 Aufgaben umfassen die Implementierung einer Tracking UI für Druckaufträge,
-sowie einer Adminoberfläche zur Konfiguration der Plattform (Angular,
-TypeScript, Jest, Karma, Java 21, Spring Framework, Hibernate, PostgreSQL 15,
+sowie einer Adminoberfläche zur Konfiguration der Plattform
+(Angular,TypeScript, Jest, Karma, Java 21, Spring Framework, Hibernate, PostgreSQL 15,
 Kubernetes, Swagger, Jenkins).
