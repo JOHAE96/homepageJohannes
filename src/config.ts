@@ -3,7 +3,7 @@ import type { Site, SocialObjects } from "./types";
 export const SITE: Site = {
   website: "https:/johanneshaeuser.de/",
   author: "Johannes Häuser",
-  desc: "A Software Engineer and Web Developer from Germany.",
+  desc: "Freelance Web- & KI-Engineering – Skalierbare Webanwendungen und KI-Lösungen aus Deutschland.",
   title: "Johannes Häuser",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
@@ -84,13 +84,13 @@ export const SOCIALS: SocialObjects = [
     name: "Steam",
     href: "https://steamcommunity.com/id/johae",
     linkTitle: `${SITE.title} on Steam`,
-    active: true,
+    active: false,
   },
   {
     name: "Telegram",
     href: "https://t.me/johae96",
     linkTitle: `${SITE.title} on Telegram`,
-    active: true,
+    active: false,
   },
   {
     name: "Mastodon",

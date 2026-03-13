@@ -3,109 +3,125 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
 import Hr from "@components/Hr.astro";
-import Card from "@components/Card";
-import Socials from "@components/Socials.astro";
+import ServiceCard from "@components/ServiceCard.astro";
+import ServiceProjectCard from "@components/ServiceProjectCard.astro";
+import CTASection from "@components/CTASection.astro";
+import LinkButton from "@components/LinkButton.astro";
 import getSortedProjects from "@utils/getSortedProjects";
 import slugify from "@utils/slugify";
-import { SOCIALS } from "@config";
 
 const projects = await getCollection("projects");
-
 const sortedProjects = getSortedProjects(projects);
 const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
-
-const socialCount = SOCIALS.filter(social => social.active).length;
 ---
 
 <Layout>
   <Header />
   <main id="main-content">
+    <!-- Hero Section -->
     <section id="hero">
-      <h1>Johannes</h1>
-
+      <h1>Web- & KI-Engineering</h1>
       <p>
-        Ich bin begeisterter Softwareentwickler, Brettspieler und
-        Filmenthusiast.
+        Als Freelance-Ingenieur unterstütze ich Unternehmen dabei,
+        leistungsfähige Webanwendungen und intelligente KI-Systeme zu bauen –
+        vom ersten Prototyp bis zur produktionsreifen Lösung.
       </p>
-      <p>
-        Die Website habe ich mit <LinkButton
-          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
-          href="https://astro.build/"
-        >
-          Astro
-        </LinkButton> erstellt. Astro ist ein neues js Framework, welches ich auf
-        der We Are developers Konferenz kennengelernt habe.
-      </p>
-      <p>
-        Check out my
-        <LinkButton
-          className="hover:text-skin-accent underline underline-offset-4 decoration-dashed"
-          href="https://github.com/JOHAE96"
-        >
-          Github
-        </LinkButton> um ein paar Hobby Projekte anzusehen.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        socialCount > 0 && (
-          <div class="social-wrapper">
-            <div class="social-links">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
+      <a href="#kontakt" class="cta-btn">
+        Kostenloses Erstgespräch buchen
+      </a>
     </section>
 
     <Hr />
 
-    {
-      featuredProjects.length > 0 && (
-        <>
-          <section id="featured">
-            <h2>Featured</h2>
-            <ul>
-              {featuredProjects.map(({ data }) => (
-                <Card
-                  href={`/projects/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              ))}
-            </ul>
-          </section>
-          <Hr />
-        </>
-      )
-    }
-
-    <section id="recent-projects">
-      <h2>Recent Projects</h2>
-      <ul>
-        {
-          sortedProjects.map(
-            ({ data }, index) =>
-              index < 4 && (
-                <Card
-                  href={`/projects/${slugify(data)}`}
-                  frontmatter={data}
-                  secHeading={false}
-                />
-              )
-          )
-        }
-      </ul>
-      <div class="all-projects-btn-wrapper">
-        <LinkButton href="/projects">
-          All Projects
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
-        </LinkButton>
+    <!-- Webentwicklung & IT -->
+    <section id="webentwicklung">
+      <h2>Webentwicklung & IT</h2>
+      <div class="services-grid">
+        <ServiceCard
+          title="Web-App-Prototypen"
+          description="MVP in 2–4 Wochen mit Vue, Astro, React oder Angular – ideal für Startups & Pitch-Decks."
+        />
+        <ServiceCard
+          title="Frontend-Übernahme"
+          description="Integration in bestehende Teams (Next.js, Tailwind) für Agenturen & KMU."
+        />
+        <ServiceCard
+          title="Digitale Souveränität"
+          description="Beratung & Umsetzung von Open-Source-Lösungen (z.B. Nextcloud, Passbolt) für KMU und Vereine."
+        />
+        <ServiceCard
+          title="Spezialprojekte"
+          description="AR/VR-Integration oder Event-Apps (z.B. Buchungsplattformen) für Kultur & Messen."
+        />
+        <ServiceCard
+          title="Optimierung & Support"
+          description="Performance-Boost & Wartung – monatlich ab 20h."
+        />
       </div>
+      <p class="pricing-info">
+        Remote deutschlandweit verfügbar
+      </p>
+    </section>
+
+    <Hr />
+
+    <!-- KI-Engineering -->
+    <section id="ki-engineering">
+      <h2>KI-Engineering</h2>
+      <div class="services-grid">
+        <ServiceCard
+          title="RAG-Systeme"
+          description="Hochperformante Retrieval-Augmented-Generation-Pipelines mit Vektor-Datenbanken für präzise, kontextbezogene KI-Antworten."
+        />
+        <ServiceCard
+          title="MCP & LLM Tooling"
+          description="Tool-Design und Agenten-Orchestrierung – LLMs sicher mit APIs, Datenbanken und externen Systemen verbinden."
+        />
+        <ServiceCard
+          title="KI-gestützte Workflows"
+          description="Automatisierung von Entwicklungsprozessen: Prompt Engineering, Code-Generierung und Qualitätssicherung."
+        />
+      </div>
+    </section>
+
+    <Hr />
+
+    <!-- Ausgewählte Projekte -->
+    {featuredProjects.length > 0 && (
+      <section id="projekte">
+        <h2>Ausgewählte Projekte</h2>
+        <ul class="projects-grid">
+          {featuredProjects.map(({ data }) => (
+            <ServiceProjectCard
+              href={`/projects/${slugify(data)}`}
+              frontmatter={data}
+            />
+          ))}
+        </ul>
+        <div class="all-projects-btn-wrapper">
+          <LinkButton href="/projects">
+            Alle Projekte
+            <svg xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
+              ></path>
+            </svg>
+          </LinkButton>
+        </div>
+      </section>
+    )}
+
+    <Hr />
+
+    <!-- CTA / Kontakt -->
+    <section id="kontakt">
+      <CTASection
+        heading="Bereit, Ihr Projekt zu starten?"
+        text="Lassen Sie uns in einem kostenlosen Erstgespräch darüber sprechen, wie ich Ihnen helfen kann."
+        buttonText="Kontakt aufnehmen"
+        buttonHref="/contact"
+      />
     </section>
   </main>
 
@@ -121,25 +137,44 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
   }
   #hero p {
-    @apply my-2;
+    @apply my-2 max-w-xl;
   }
-  .social-wrapper {
-    @apply mt-4 flex flex-col sm:flex-row sm:items-center;
-  }
-  .social-links {
-    @apply mb-1 mr-2 whitespace-nowrap sm:mb-0;
+  .cta-btn {
+    @apply mt-6 inline-block rounded-md bg-skin-accent px-6 py-3 font-semibold text-skin-inverted transition-opacity hover:opacity-90;
   }
 
-  /* ===== Featured & Recent Projects Sections ===== */
-  #featured,
-  #recent-projects {
+  /* ===== Services Sections ===== */
+  #webentwicklung,
+  #ki-engineering {
     @apply pb-6 pt-12;
   }
-  #featured h2,
-  #recent-projects h2 {
+  #webentwicklung h2,
+  #ki-engineering h2 {
     @apply text-2xl font-semibold tracking-wide;
+  }
+  .services-grid {
+    @apply mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2;
+  }
+  .pricing-info {
+    @apply mt-6 text-center text-sm opacity-75;
+  }
+
+  /* ===== Projects Section ===== */
+  #projekte {
+    @apply pb-6 pt-12;
+  }
+  #projekte h2 {
+    @apply text-2xl font-semibold tracking-wide;
+  }
+  .projects-grid {
+    @apply mt-6 grid gap-6;
   }
   .all-projects-btn-wrapper {
     @apply my-8 text-center;
+  }
+
+  /* ===== CTA Section ===== */
+  #kontakt {
+    @apply pb-6 pt-6;
   }
 </style>

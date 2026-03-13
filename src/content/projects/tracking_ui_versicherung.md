@@ -4,6 +4,8 @@ author: Johannes Häuser
 title: Zentralen Druckplattform für einen Versicherungskonzern
 projectSlug: versicherung
 featured: true
+role: "Senior Software Engineer"
+result: "Zentrale Druckplattform für effizientes Auftragsmanagement"
 ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png
 tags:
   - release

@@ -12,6 +12,12 @@ export const blogSchema = z
     ogImage: z.string().optional(),
     description: z.string(),
     canonicalURL: z.string().optional(),
+    image: z.string().optional(),
+    role: z.string().optional(),
+    result: z.string().optional(),
+    clientQuote: z.string().optional(),
+    liveUrl: z.string().optional(),
+    githubUrl: z.string().optional(),
   })
   .strict();
 

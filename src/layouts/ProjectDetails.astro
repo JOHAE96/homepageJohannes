@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Datetime from "@components/Datetime";
+import { render } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
@@ -11,10 +12,10 @@ export interface Props {
 
 const { project } = Astro.props;
 
-const { title, author, description, ogImage, canonicalURL, pubDatetime } =
+const { title, author, description, ogImage, canonicalURL, pubDatetime, role, result, clientQuote, liveUrl, githubUrl } =
   project.data;
 
-const { Content } = await project.render();
+const { Content } = await render(project);
 
 const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
   .href;
@@ -37,15 +38,44 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
         ><path
           d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
         ></path>
-      </svg><span>Go back</span>
+      </svg><span>Zurück</span>
     </button>
   </div>
   <main id="main-content">
     <h1 class="project-title">{title}</h1>
     <Datetime datetime={pubDatetime} size="lg" className="my-2" />
+    {role && (
+      <p class="project-role">
+        <span class="font-semibold">Rolle:</span> {role}
+      </p>
+    )}
+    {result && (
+      <div class="project-result">
+        <span class="font-semibold">Ergebnis:</span> {result}
+      </div>
+    )}
+    {clientQuote && (
+      <blockquote class="project-quote">
+        &laquo;{clientQuote}&raquo;
+      </blockquote>
+    )}
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
       <Content />
     </article>
+    {(liveUrl || githubUrl) && (
+      <div class="project-links">
+        {liveUrl && (
+          <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+            Live-Demo &rarr;
+          </a>
+        )}
+        {githubUrl && (
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+            GitHub &rarr;
+          </a>
+        )}
+      </div>
+    )}
   </main>
   <Footer />
 </Layout>
@@ -57,7 +87,19 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
   .project-title {
     @apply text-2xl font-semibold text-skin-accent;
   }
-  .tags-container {
-    @apply my-8;
+  .project-role {
+    @apply mt-2 text-sm italic opacity-80;
+  }
+  .project-result {
+    @apply mt-2 rounded border border-skin-accent border-opacity-30 bg-skin-card bg-opacity-50 px-4 py-2 text-sm text-skin-accent;
+  }
+  .project-quote {
+    @apply mt-3 border-l-2 border-skin-accent border-opacity-50 pl-4 text-sm italic opacity-80;
+  }
+  .project-links {
+    @apply mt-8 flex gap-4;
+  }
+  .project-link {
+    @apply rounded-md bg-skin-accent px-4 py-2 text-sm font-semibold text-skin-inverted transition-opacity hover:opacity-90;
   }
 </style>

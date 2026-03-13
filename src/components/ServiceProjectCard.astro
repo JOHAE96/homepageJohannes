@@ -1,0 +1,106 @@
+---
+import type { BlogFrontmatter } from "@content/_schemas";
+
+export interface Props {
+  href: string;
+  frontmatter: BlogFrontmatter;
+}
+
+const { href, frontmatter } = Astro.props;
+const { title, description, tags, image, role, result, clientQuote, liveUrl, githubUrl } = frontmatter;
+---
+
+<li class="project-card">
+  {image && (
+    <a href={href}>
+      <img src={image} alt={title} class="project-image" loading="lazy" />
+    </a>
+  )}
+  <div class="project-content">
+    <a href={href} class="project-title-link">
+      <h3 class="project-title">{title}</h3>
+    </a>
+    {tags && tags.length > 0 && (
+      <div class="project-tags">
+        {tags.map(tag => (
+          <span class="tag">{tag}</span>
+        ))}
+      </div>
+    )}
+    <p class="project-desc">{description}</p>
+    {role && (
+      <p class="project-meta">
+        <span class="meta-label">Rolle:</span> {role}
+      </p>
+    )}
+    {result && (
+      <p class="project-meta project-result">
+        <span class="meta-label">Ergebnis:</span> {result}
+      </p>
+    )}
+    {clientQuote && (
+      <blockquote class="project-quote">
+        &laquo;{clientQuote}&raquo;
+      </blockquote>
+    )}
+    {(liveUrl || githubUrl) && (
+      <div class="project-links">
+        {liveUrl && (
+          <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+            Live-Demo &rarr;
+          </a>
+        )}
+        {githubUrl && (
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+            GitHub &rarr;
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</li>
+
+<style>
+  .project-card {
+    @apply overflow-hidden rounded-lg border border-skin-line bg-skin-card bg-opacity-50;
+  }
+  .project-image {
+    @apply h-48 w-full object-cover;
+  }
+  .project-content {
+    @apply p-6;
+  }
+  .project-title-link {
+    @apply inline-block text-skin-accent decoration-dashed underline-offset-4 hover:underline;
+  }
+  .project-title {
+    @apply text-xl font-semibold;
+  }
+  .project-tags {
+    @apply mt-2 flex flex-wrap gap-1;
+  }
+  .tag {
+    @apply rounded bg-skin-card-muted bg-opacity-50 px-2 py-0.5 text-xs;
+  }
+  .project-desc {
+    @apply mt-3 text-sm opacity-80;
+  }
+  .project-meta {
+    @apply mt-1 text-sm;
+  }
+  .meta-label {
+    @apply font-semibold;
+  }
+  .project-result {
+    @apply text-skin-accent;
+  }
+  .project-quote {
+    @apply mt-3 border-l-2 border-skin-accent border-opacity-50 pl-4 text-sm italic opacity-80;
+  }
+  .project-links {
+    @apply mt-4 flex gap-4;
+  }
+  .project-link {
+    @apply text-sm text-skin-accent decoration-dashed underline-offset-4 hover:underline;
+  }
+</style>
