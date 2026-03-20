@@ -27,6 +27,9 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
         leistungsfähige Webanwendungen und intelligente KI-Systeme zu bauen –
         vom ersten Prototyp bis zur produktionsreifen Lösung.
       </p>
+      <p class="trust-line">
+        Senior-Erfahrung aus der IT-Beratung (bitside GmbH) – jetzt als unabhängiger Freelancer verfügbar.
+      </p>
       <a href="#kontakt" class="cta-btn">
         Kostenloses Erstgespräch buchen
       </a>
@@ -142,6 +145,9 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   }
   #hero p {
     @apply my-2 max-w-xl;
+  }
+  #hero .trust-line {
+    @apply text-sm opacity-75;
   }
   .cta-btn {
     @apply mt-6 inline-block rounded-md bg-skin-accent px-6 py-3 font-semibold text-skin-inverted transition-opacity hover:opacity-90;

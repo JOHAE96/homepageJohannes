@@ -18,6 +18,8 @@ tags:
 description: Flutter app zum digitalisieren von Gutscheinen
 ---
 
+_Umgesetzt als Senior Software Engineer bei bitside GmbH_
+
 Rolle: Senior Software Engineer
 
 bitside GmbH, für ein Start-up

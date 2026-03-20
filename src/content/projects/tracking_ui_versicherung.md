@@ -20,6 +20,8 @@ tags:
 description: Tracking UI für Druckaufträge und Adminoberfläche zur Konfiguration der Plattform
 ---
 
+_Umgesetzt als Senior Software Engineer bei bitside GmbH_
+
 Rolle: Senior Software Engineer
 
 bitside GmbH, für einen Versicherungskonzern

@@ -5,6 +5,8 @@ title: "Über mich"
 
 Ich bin Johannes Häuser – Freelance Web- & KI-Ingenieur aus Deutschland. Ich helfe Unternehmen, moderne Webanwendungen und KI-Lösungen zu entwickeln, die echten Mehrwert schaffen.
 
+Mehrjährige Erfahrung als Senior Engineer bei der bitside GmbH – einer der führenden IT-Beratungen Deutschlands.
+
 <div>
   <img src="/assets/Johannes.jpg" class="sm:w-1/2 mx-auto" alt="Johannes Häuser">
   <label> Johannes Häuser; Bildnachweise: Dominique Wollniok</label>
@@ -22,6 +24,10 @@ Mein technischer Schwerpunkt liegt auf:
 ## Arbeitsweise
 
 Ich arbeite remote, agil und pragmatisch. Klare Kommunikation, sauberer Code und messbare Ergebnisse stehen für mich im Vordergrund. Ob als Solo-Entwickler oder als Verstärkung für Ihr Team – ich passe mich flexibel an Ihre Anforderungen an.
+
+## Qualitätsanspruch
+
+Du bekommst strukturierte Ingenieurspraxis aus einem Enterprise-Beratungsumfeld – Clean Code, TDD, Code Reviews und agile Methoden – ohne den Overhead einer Agentur. Direkte Kommunikation, volle Verantwortung, nachvollziehbare Ergebnisse.
 
 ## Außerhalb der Arbeit
 

@@ -22,6 +22,8 @@ tags:
 description: Single-Page-Application zur Anzeige von Kursskripten und Lernaufgaben
 ---
 
+_Umgesetzt als Senior Software Engineer bei bitside GmbH_
+
 Rolle Software Engineer
 
 bitside GmbH, für eine Fernuniversität
