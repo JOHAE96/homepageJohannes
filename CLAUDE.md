@@ -8,6 +8,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Personal portfolio website for Johannes Häuser, built with Astro (based on the AstroPaper template). Showcases software engineering projects with tags, pagination, fuzzy search, and dynamic OG image generation.
 
+### Target Audience
+
+The primary visitor is the **Projektverteiler** — a project manager or staffing lead who is scanning the site to decide whether Johannes fits a concrete client project. Full persona: [PERSONA_ZIELGRUPPE.md](PERSONA_ZIELGRUPPE.md).
+
+**Key implication:** Every content and design decision should optimize for a 30–90 second scan. Tags, clear tech labels, and a low-friction contact path matter more than prose depth.
+
 ### What This Project Is NOT
 
 - **NOT a blog** — content is projects, not posts. Don't suggest blog-specific patterns.
