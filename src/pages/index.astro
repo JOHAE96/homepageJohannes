@@ -21,14 +21,16 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   <main id="main-content">
     <!-- Hero Section -->
     <section id="hero">
-      <h1>Web- & KI-Engineering</h1>
-      <p>
-        Als Freelance-Ingenieur unterstütze ich Unternehmen dabei,
-        leistungsfähige Webanwendungen und intelligente KI-Systeme zu bauen –
-        vom ersten Prototyp bis zur produktionsreifen Lösung.
+      <p class="availability-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
+        Verfügbar ab sofort · Vollzeit · Remote-first · Deutsch & Englisch
       </p>
-      <p class="trust-line">
-        Senior-Erfahrung aus der IT-Beratung (bitside GmbH) – jetzt als unabhängiger Freelancer verfügbar.
+      <h1>Fullstack & KI-Entwicklung – verfügbar ab sofort</h1>
+      <p>
+        4 Jahre Projekterfahrung in Enterprise-Umgebungen (Versicherung,
+        E-Learning, Startups). Ich entwickle Web-Apps, integriere KI in
+        bestehende Workflows – und helfe Teams, AI-Tools mit den richtigen
+        Guardrails produktiv einzusetzen.
       </p>
       <a href="#kontakt" class="cta-btn">
         Kostenloses Erstgespräch buchen
@@ -46,25 +48,10 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
           description="MVP in 2–4 Wochen mit Vue, Astro, Svelte React oder Angular – ideal für Startups & Pitch-Decks."
         />
         <ServiceCard
-          title="Frontend-Übernahme"
-          description="Integration in bestehende Teams (Next.js, Tailwind) für Agenturen & KMU."
-        />
-        <ServiceCard
-          title="Digitale Souveränität"
-          description="Beratung & Umsetzung von Open-Source-Lösungen (z.B. Nextcloud, Passbolt) für KMU und Vereine."
-        />
-        <ServiceCard
-          title="Spezialprojekte"
-          description="AR/VR-Integration oder Event-Apps (z.B. Buchungsplattformen) für Kultur & Messen."
-        />
-        <ServiceCard
           title="Optimierung & Support"
           description="Performance-Boost & Wartung – monatlich ab 20h."
         />
       </div>
-      <p class="pricing-info">
-        Remote deutschlandweit verfügbar
-      </p>
     </section>
 
     <Hr />
@@ -88,6 +75,10 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
         <ServiceCard
           title="Spec-Driven Development"
           description="Strukturierte KI-Entwicklung mit klaren Spezifikationen – vom Anforderungsdokument bis zum getesteten Feature. Kein Vibe Coding, sondern nachvollziehbare Ingenieurspraxis."
+        />
+        <ServiceCard
+          title="AI-Tool-Adoption für Entwicklungsteams"
+          description="Ich helfe Teams dabei, KI-Tools wie Cursor, Claude oder Copilot strukturiert einzuführen – mit klaren Guardrails, passenden Workflows und dem richtigen Tool für den jeweiligen Kontext. Kein Hype, sondern pragmatische Integration in den Entwicklungsalltag."
         />
       </div>
     </section>
@@ -121,6 +112,30 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
 
     <Hr />
 
+    <!-- So läuft ein Projekt ab -->
+    <section id="prozess">
+      <h2>So läuft ein Projekt ab</h2>
+      <ol class="process-list">
+        <li>
+          <strong>Erstgespräch</strong> – Kostenlos, 30 Min. Ich verstehe dein Problem, du lernst mich kennen.
+        </li>
+        <li>
+          <strong>Konzept & Spec</strong> – Gemeinsam definieren wir Scope, Technologie und Meilensteine – schriftlich, klar, nachvollziehbar.
+        </li>
+        <li>
+          <strong>Umsetzung</strong> – Allein oder im Team, remote oder hybrid. Regelmäßige Check-ins, kein Blackbox-Development.
+        </li>
+        <li>
+          <strong>Review & Launch</strong> – Code Reviews, Tests, gemeinsamer Abnahme-Prozess.
+        </li>
+        <li>
+          <strong>Nach dem Launch</strong> – Optional: Weiterentwicklung, Support, Übergabe an interne Teams.
+        </li>
+      </ol>
+    </section>
+
+    <Hr />
+
     <!-- CTA / Kontakt -->
     <section id="kontakt">
       <CTASection
@@ -140,14 +155,14 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   #hero {
     @apply pb-6 pt-8;
   }
+  #hero .availability-badge {
+    @apply mb-4 inline-flex items-center gap-1.5 rounded-full bg-skin-accent bg-opacity-10 px-4 py-1 text-sm font-medium text-skin-accent;
+  }
   #hero h1 {
     @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
   }
   #hero p {
     @apply my-2 max-w-xl;
-  }
-  #hero .trust-line {
-    @apply text-sm opacity-75;
   }
   .cta-btn {
     @apply mt-6 inline-block rounded-md bg-skin-accent px-6 py-3 font-semibold text-skin-inverted transition-opacity hover:opacity-90;
@@ -165,9 +180,6 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   .services-grid {
     @apply mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2;
   }
-  .pricing-info {
-    @apply mt-6 text-center text-sm opacity-75;
-  }
 
   /* ===== Projects Section ===== */
   #projekte {
@@ -181,6 +193,27 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   }
   .all-projects-btn-wrapper {
     @apply my-8 text-center;
+  }
+
+  /* ===== Process Section ===== */
+  #prozess {
+    @apply pb-6 pt-12;
+  }
+  #prozess h2 {
+    @apply text-2xl font-semibold tracking-wide;
+  }
+  .process-list {
+    @apply mt-6 space-y-4 pl-0;
+    counter-reset: process-counter;
+    list-style: none;
+  }
+  .process-list li {
+    @apply flex gap-4;
+    counter-increment: process-counter;
+  }
+  .process-list li::before {
+    content: counter(process-counter);
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-skin-accent text-sm font-bold text-skin-inverted;
   }
 
   /* ===== CTA Section ===== */
