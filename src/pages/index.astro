@@ -25,16 +25,37 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
         Verfügbar ab sofort · Vollzeit · Remote-first · Deutsch & Englisch
       </p>
-      <h1>Fullstack & KI-Entwicklung – verfügbar ab sofort</h1>
+      <h1>Fullstack-Entwickler & KI-Ingenieur für Enterprise-Projekte</h1>
       <p>
         4 Jahre Projekterfahrung in Enterprise-Umgebungen (Versicherung,
         E-Learning, Startups). Ich entwickle Web-Apps, integriere KI in
         bestehende Workflows – und helfe Teams, AI-Tools mit den richtigen
         Guardrails produktiv einzusetzen.
       </p>
-      <a href="#kontakt" class="cta-btn">
+      <a href="/contact" class="cta-btn">
         Kostenloses Erstgespräch buchen
       </a>
+    </section>
+
+    <Hr />
+
+    <!-- Tech-Stack Übersicht -->
+    <section id="stack">
+      <p class="stack-label">Stack</p>
+      <div class="stack-tags">
+        <span>Vue</span>
+        <span>Angular</span>
+        <span>React</span>
+        <span>TypeScript</span>
+        <span>Spring Boot</span>
+        <span>Node.js</span>
+        <span>Python</span>
+        <span>Flutter</span>
+        <span>PostgreSQL</span>
+        <span>RAG</span>
+        <span>LLM / MCP</span>
+        <span>Kubernetes</span>
+      </div>
     </section>
 
     <Hr />
@@ -166,6 +187,20 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   }
   .cta-btn {
     @apply mt-6 inline-block rounded-md bg-skin-accent px-6 py-3 font-semibold text-skin-inverted transition-opacity hover:opacity-90;
+  }
+
+  /* ===== Tech-Stack Section ===== */
+  #stack {
+    @apply py-6;
+  }
+  .stack-label {
+    @apply mb-3 text-xs font-semibold uppercase tracking-widest opacity-50;
+  }
+  .stack-tags {
+    @apply flex flex-wrap gap-2;
+  }
+  .stack-tags span {
+    @apply rounded-md border border-skin-line px-3 py-1 text-sm font-medium;
   }
 
   /* ===== Services Sections ===== */

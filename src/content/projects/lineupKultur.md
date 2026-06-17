@@ -11,6 +11,11 @@ ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2
 tags:
   - kultur
   - startup
+  - vue
+  - tailwind
+  - nodejs
+  - restapi
+  - fullstack
 description: Ein Terminplaner für Kulturveranstaltungen
 ---
 

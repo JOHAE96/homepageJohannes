@@ -15,7 +15,8 @@ import Footer from "@components/Footer.astro";
         Haben Sie ein Projekt im Kopf? Schreiben Sie mir – ich melde mich
         innerhalb von 24 Stunden bei Ihnen.
       </p>
-      <form>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
         <label
           for="name"
           class="mb-2 mt-3 block text-base font-medium text-skin-base"
@@ -26,6 +27,7 @@ import Footer from "@components/Footer.astro";
           class="w-full rounded-md border border-skin-line bg-skin-fill px-2 py-1 text-base text-skin-base focus:border-skin-accent focus:shadow-md focus:outline-none"
           type="text"
           id="name"
+          name="name"
           placeholder="Name"
         />
         <label
@@ -37,6 +39,7 @@ import Footer from "@components/Footer.astro";
         <input
           class="w-full rounded-md border border-skin-line bg-skin-fill px-2 py-1 text-base text-skin-base focus:border-skin-accent focus:shadow-md focus:outline-none"
           id="email"
+          name="email"
           type="email"
           placeholder="E-Mail"
         />
@@ -49,6 +52,7 @@ import Footer from "@components/Footer.astro";
         <input
           class="w-full rounded-md border border-skin-line bg-skin-fill px-2 py-1 text-base text-skin-base focus:border-skin-accent focus:shadow-md focus:outline-none"
           id="subject"
+          name="subject"
           type="text"
           placeholder="Betreff"
         />
@@ -61,6 +65,7 @@ import Footer from "@components/Footer.astro";
         <textarea
           class="w-full rounded-md border border-skin-line bg-skin-fill px-2 py-1 text-base text-skin-base focus:border-skin-accent focus:shadow-md focus:outline-none"
           id="message"
+          name="message"
           rows="5"
           placeholder="Nachricht"></textarea>
         <button

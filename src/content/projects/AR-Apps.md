@@ -12,8 +12,10 @@ tags:
   - messe
   - ar
   - apple
+  - arkit
+  - swift
   - ios
-description: Augmented Reality (AR)- Projekt für eine Messe Exponat
+description: AR-App mit ARKit für ein Messe-Exponat (Smart Distribution Logistik)
 ---
 
 Die Anwendung wurden für das [Projekt SMART DISTRIBUTION LOGISTIK (SDL)](https://sdl.smartcitylogistik.de/)entwickelt. Dieses hat ein Messeexponat – einen Demonstrator entwickelt. Dieser hat die Aufgabe, auf Messen und Veranstaltungen die Zielstellungen des Projektes auf spielerische Art und Weise vorzustellen.

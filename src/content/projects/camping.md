@@ -12,7 +12,9 @@ tags:
   - fullstack
   - angular
   - nodejs
-description: POC einer Buchungsplattform für Campingplätze
+  - postgresql
+  - fullstack
+description: POC einer Buchungsplattform für Campingplätze mit ML-basiertem Dynamic Pricing
 ---
 
 Ziel des Projektes war es grundlegende Funktionen einer Buchungsplattform für Campingplätze zu entwickeln. Das Frontend wird mit Angular und Material Design umgesetzt. Das Backend besteht aus einer Microservice-Architektur, welche auf Node.js und express basiert. Die Daten werden auf einer geteilten Postgresql-Datenbank mit Postgis gespeichert. Die einzelnen Services werden in Docker Containern ausgeführt und nutzen RESTful APIs.
