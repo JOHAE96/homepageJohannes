@@ -43,7 +43,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
   </div>
   <main id="main-content">
     <h1 class="project-title">{title}</h1>
-    <Datetime datetime={pubDatetime} size="lg" className="my-2" />
+    <!-- <Datetime datetime={pubDatetime} size="lg" className="my-2" /> -->
     {role && (
       <p class="project-role">
         <span class="font-semibold">Rolle:</span> {role}
