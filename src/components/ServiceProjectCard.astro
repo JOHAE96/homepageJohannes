@@ -7,7 +7,7 @@ export interface Props {
 }
 
 const { href, frontmatter } = Astro.props;
-const { title, description, tags, image, role, result, clientQuote, liveUrl, githubUrl } = frontmatter;
+const { title, description, tags, image, role, result, clientQuote, liveUrl, githubUrl, projectPeriod, clientType } = frontmatter;
 ---
 
 <li class="project-card">
@@ -20,6 +20,12 @@ const { title, description, tags, image, role, result, clientQuote, liveUrl, git
     <a href={href} class="project-title-link">
       <h3 class="project-title">{title}</h3>
     </a>
+    {(clientType || projectPeriod) && (
+      <div class="project-meta-header">
+        {clientType && <span class="client-type-badge">{clientType}</span>}
+        {projectPeriod && <span class="project-period">{projectPeriod}</span>}
+      </div>
+    )}
     {tags && tags.length > 0 && (
       <div class="project-tags">
         {tags.map(tag => (
@@ -93,6 +99,15 @@ const { title, description, tags, image, role, result, clientQuote, liveUrl, git
   }
   .project-result {
     @apply text-skin-accent;
+  }
+  .project-meta-header {
+    @apply mt-2 flex flex-wrap items-center gap-2;
+  }
+  .client-type-badge {
+    @apply rounded-full bg-skin-accent bg-opacity-10 px-2.5 py-0.5 text-xs font-medium text-skin-accent;
+  }
+  .project-period {
+    @apply text-xs opacity-60;
   }
   .project-quote {
     @apply mt-3 border-l-2 border-skin-accent border-opacity-50 pl-4 text-sm italic opacity-80;

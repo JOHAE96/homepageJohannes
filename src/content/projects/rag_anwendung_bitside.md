@@ -5,6 +5,8 @@ pubDatetime: 2024-06-01
 title: Interne KI-Wissensdatenbank (RAG)
 projectSlug: ki-wissensdatenbank
 featured: true
+projectPeriod: "03/2024 – 06/2024"
+clientType: "Enterprise-Kunde"
 role: "Software Engineer"
 result: "RAG-System zur effizienten Bereitstellung von internem Unternehmenswissen"
 ogImage: https://user-images.githubusercontent.com/53733092/215771435-25408246-2309-4f8b-a781-1f3d93bdf0ec.png

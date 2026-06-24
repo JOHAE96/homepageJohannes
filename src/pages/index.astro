@@ -11,6 +11,7 @@ import LinkButton from "@components/LinkButton.astro";
 import getSortedProjects from "@utils/getSortedProjects";
 import slugify from "@utils/slugify";
 
+const standDate = new Date().toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
 const projects = await getCollection("projects");
 const sortedProjects = getSortedProjects(projects);
 const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
@@ -23,18 +24,25 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
     <section id="hero">
       <p class="availability-badge">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-        Verfügbar ab sofort · Vollzeit · Remote-first · Deutsch & Englisch
+        Verfügbar ab sofort · Vollzeit · Remote-first · Deutsch & Englisch · Stand: {standDate}
       </p>
       <h1>Fullstack-Entwickler & KI-Ingenieur für Enterprise-Projekte</h1>
-      <p>
-        4 Jahre Projekterfahrung in Enterprise-Umgebungen (Versicherung,
-        E-Learning, Startups). Ich entwickle Web-Apps, integriere KI in
-        bestehende Workflows – und helfe Teams, AI-Tools mit den richtigen
-        Guardrails produktiv einzusetzen.
+      <p class="hero-facts">
+        4+ Jahre Enterprise-Erfahrung · Web-Apps & KI-Integration · Branchen: Versicherung, E-Learning, Startups
       </p>
-      <a href="/contact" class="cta-btn">
-        Kostenloses Erstgespräch buchen
-      </a>
+      <p>
+        Ich entwickle Web-Apps, integriere KI in bestehende Workflows – und
+        helfe Teams, AI-Tools mit den richtigen Guardrails produktiv
+        einzusetzen.
+      </p>
+      <div class="cta-group">
+        <a href="/contact" class="cta-btn">
+          Kostenloses Erstgespräch buchen
+        </a>
+        <a href="mailto:hello@johanneshaeuser.de" class="cta-link-secondary">
+          oder direkt per E-Mail
+        </a>
+      </div>
     </section>
 
     <Hr />
@@ -42,19 +50,40 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
     <!-- Tech-Stack Übersicht -->
     <section id="stack">
       <p class="stack-label">Stack</p>
-      <div class="stack-tags">
-        <span>Vue</span>
-        <span>Angular</span>
-        <span>React</span>
-        <span>TypeScript</span>
-        <span>Spring Boot</span>
-        <span>Node.js</span>
-        <span>Python</span>
-        <span>Flutter</span>
-        <span>PostgreSQL</span>
-        <span>RAG</span>
-        <span>LLM / MCP</span>
-        <span>Kubernetes</span>
+      <div class="stack-categories">
+        <div class="stack-category">
+          <span class="stack-cat-label">Frontend</span>
+          <div class="stack-tags">
+            <span>Vue</span>
+            <span>Angular</span>
+            <span>React</span>
+            <span>TypeScript</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <span class="stack-cat-label">Backend</span>
+          <div class="stack-tags">
+            <span>Spring Boot</span>
+            <span>Node.js</span>
+            <span>Python</span>
+            <span>Flutter</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <span class="stack-cat-label">AI / KI</span>
+          <div class="stack-tags">
+            <span>RAG</span>
+            <span>LLM / MCP</span>
+            <span>LlamaIndex</span>
+          </div>
+        </div>
+        <div class="stack-category">
+          <span class="stack-cat-label">Infra</span>
+          <div class="stack-tags">
+            <span>PostgreSQL</span>
+            <span>Kubernetes</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -185,8 +214,18 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   #hero p {
     @apply my-2 max-w-xl;
   }
+  .hero-facts {
+    @apply text-sm font-medium opacity-60;
+    max-width: none;
+  }
+  .cta-group {
+    @apply mt-6 flex flex-wrap items-center gap-4;
+  }
   .cta-btn {
-    @apply mt-6 inline-block rounded-md bg-skin-accent px-6 py-3 font-semibold text-skin-inverted transition-opacity hover:opacity-90;
+    @apply inline-block rounded-md bg-skin-accent px-6 py-3 font-semibold text-skin-inverted transition-opacity hover:opacity-90;
+  }
+  .cta-link-secondary {
+    @apply text-sm text-skin-accent decoration-dashed underline-offset-4 hover:underline;
   }
 
   /* ===== Tech-Stack Section ===== */
@@ -195,6 +234,15 @@ const featuredProjects = sortedProjects.filter(({ data }) => data.featured);
   }
   .stack-label {
     @apply mb-3 text-xs font-semibold uppercase tracking-widest opacity-50;
+  }
+  .stack-categories {
+    @apply flex flex-col gap-3;
+  }
+  .stack-category {
+    @apply flex flex-wrap items-center gap-2;
+  }
+  .stack-cat-label {
+    @apply w-16 shrink-0 text-xs font-semibold uppercase tracking-wider opacity-50;
   }
   .stack-tags {
     @apply flex flex-wrap gap-2;

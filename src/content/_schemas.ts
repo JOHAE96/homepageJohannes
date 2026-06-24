@@ -18,6 +18,8 @@ export const blogSchema = z
     clientQuote: z.string().optional(),
     liveUrl: z.string().optional(),
     githubUrl: z.string().optional(),
+    projectPeriod: z.string().optional(),
+    clientType: z.string().optional(),
   })
   .strict();
 

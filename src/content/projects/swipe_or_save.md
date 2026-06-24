@@ -5,6 +5,8 @@ pubDatetime: 2024-10-01
 title: '2. Platz – „Swipe or Save" Finanz-App'
 projectSlug: swipe-or-save
 featured: true
+projectPeriod: "2024 (48h)"
+clientType: "Hackathon / Prototyp"
 liveUrl: https://vrmoegen.netlify.app
 tags:
   - rapid-prototyping
